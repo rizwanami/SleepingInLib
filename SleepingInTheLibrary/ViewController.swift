@@ -65,9 +65,9 @@ class ViewController: UIViewController {
         } else {
             var keyValuePairs = [String]()
             for (key, value) in parameters {
-                let stringValue = "/(value)"
+                let stringValue = "\(value)"
                 let escapeValue = stringValue.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
-                keyValuePairs.append(key + "=" + "\(escapeValue)")
+                keyValuePairs.append(key + "=" + "\(escapeValue!)")
                 
             }
             return "?\(keyValuePairs.joinWithSeparator("&"))"
